@@ -2,7 +2,7 @@
 title: Zhenlin Yang's Blog
 subtitle: A Mobile Game Developer
 welcome_message: <a href="https://github.com/zhenlinyang" target="_blank">Visit My Github</a>
-description: Welcome To My Blog
+description: Welcome to My Blog
 creator: <a href="http://yangzhenlin.com">Zhenlin Yang</a>
 
 url: "http://yangzhenlin.com"
@@ -22,7 +22,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
+    - {title: Weibo, description: My Weibo, url: 'http://weibo.com/lz0807fl'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
