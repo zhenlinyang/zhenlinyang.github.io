@@ -1,12 +1,11 @@
 # Zhenlin Yang's Blog
 
-http://www.yangzhenlin.com/
+http://github.yangzhenlin.com/
 
 ## Special Acknowledgement
 
 [Jekyll](http://jekyllrb.com)  
 [Vno Jekyll](https://github.com/onevcat/vno-jekyll)  
-[Dale Anthony](https://github.com/daleanthony)
 
 ## Licence
 
