@@ -2,10 +2,10 @@
 
 http://www.yangzhenlin.com/
 
-## Acknowledgement
+## Special Acknowledgement
 
-[Jekyll](http://jekyllrb.com)
-[Vno Jekyll](https://github.com/onevcat/vno-jekyll)
+[Jekyll](http://jekyllrb.com)  
+[Vno Jekyll](https://github.com/onevcat/vno-jekyll)  
 [Dale Anthony](https://github.com/daleanthony)
 
 ## Licence
