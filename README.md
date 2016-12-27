@@ -1,6 +1,6 @@
 # Zhenlin Yang's Blog
 
-http://github.yangzhenlin.com/
+http://blog.yangzhenlin.com/
 
 ## Special Acknowledgement
 
