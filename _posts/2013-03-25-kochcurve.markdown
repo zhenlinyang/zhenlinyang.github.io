@@ -152,7 +152,7 @@ public class KochListener implements MouseListener {
 
 			g.drawLine((int) x1, (int) y1, (int) x2, (int) y2);
 
-		} else if (level &gt; 1) {
+		} else if (level > 1) {
 			level--;
 			double x3 = (2 * x1 + x2) / 3;
 			double y3 = (2 * y1 + y2) / 3;
@@ -168,7 +168,7 @@ public class KochListener implements MouseListener {
 			/**
 			 * 0度
 			 */
-			if ((x3&lt;x4)&amp;&amp;(y3==y4)) {
+			if ((x3<x4)&&(y3==y4)) {
 				x5 = (x3 + x4) / 2;
 				y5 = y3 - (x4 - x3) * Math.sqrt(3) / 2;
 			}
@@ -176,15 +176,15 @@ public class KochListener implements MouseListener {
 			/**
 			 * 60度
 			 */
-			else if ((x3&lt;x4)&amp;&amp;(y3&gt;y4)) {
+			else if ((x3<x4)&&(y3>y4)) {
 				x5 = x1;
-				y5 = y4;	
+				y5 = y4;
 			}
 			
 			/**
 			 * 120度
 			 */
-			else if ((x3&gt;x4)&amp;&amp;(y3&gt;y4)) {
+			else if ((x3>x4)&&(y3>y4)) {
 				x5 = x2;
 				y5 = y3;
 			}
@@ -192,7 +192,7 @@ public class KochListener implements MouseListener {
 			/**
 			 * 180度
 			 */
-			else if ((x3&gt;x4)&amp;&amp;(y3==y4)) {
+			else if ((x3>x4)&&(y3==y4)) {
 				x5 = (x3 + x4) / 2;
 				y5 = y3 + (x3 - x4) * Math.sqrt(3) / 2;
 			}
@@ -200,20 +200,17 @@ public class KochListener implements MouseListener {
 			/**
 			 * 240度
 			 */
-			else if ((x3&gt;x4)&amp;&amp;(y3&lt;y4)) {
+			else if ((x3>x4)&&(y3<y4)) {
 				x5 = x1;
 				y5 = y4;
-
-
 			}
 
 			/**
 			 * 300度
 			 */
-			else if ((x3&lt;x4)&amp;&amp;(y3&lt;y4)) {
+			else if ((x3<x4)&&(y3<y4)) {
 				x5 = x2;
 				y5 = y3;
-
 			}
 
 			KochPaint(x1, y1, x3, y3, level);
