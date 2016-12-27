@@ -1,7 +1,7 @@
 ---
 layout: post
-title: NGINX服务器配置SSL证书部署HTTPS网站
-date: 2015-02-27 12:00:00.000000000 +08:00
+title: 五子棋双人在线对战 GOBANG ONLINE
+date: 2015-12-03 12:00:00.000000000 +08:00
 tags: Java
 ---
 
