@@ -7,7 +7,7 @@ creator: <a href="http://github.yangzhenlin.com">Zhenlin Yang</a>
 
 url: "http://github.yangzhenlin.com"
 
-permalink: /:year/:month/:title/
+permalink: /:title/
 
 # Format
 highlighter: plain
