@@ -1,0 +1,62 @@
+---
+layout: post
+title: 书单
+date: 2000-01-01 12:00:00.000000000 +08:00
+tags: Java
+---
+
+# C++
+
+C++ Primer Plus（第6版） `C++ Primer Plus`
+
+C++高级编程（第3版） `Professional C++, Third Edition`
+
+# C#
+
+赵（劼）五本{
+
+赵（劼）三本{
+
+`C# in Depth`：讲的是C#的东西
+
+`CLR via C#`：讲的是运行时的东西
+
+`Framework Design Guideline`：讲的是你要如何设计一个类库才能跟.NET浑然一体
+
+}
+
+`.NET Essentials`
+
+`Pro .NET Performance`
+
+}
+
+C#高级编程（第9版） C# 5.0 & .NET 4.5.1 `Professional C# 5.0 and .NET 4.5.1`
+
+Unity3D
+
+`Unity 3D ShaderLab 开发实战详解（第2版）`
+
+`Unity Shader 入门精要`
+
+Java
+
+`Effective Java`
+
+Linux
+
+`鸟哥的Linux私房菜服务器架设篇`
+
+`鸟哥的Linux私房菜基础学习篇`
+
+程序设计
+
+算法导论（第3版） `Introduction to Algorithms, third edition`
+
+计算机程序设计艺术 `The Art of Computer Programming` （简称TAOCP）
+
+`程序员的自我修养：链接、装载与库`
+
+其他
+
+`浪潮之巅 第2版 套装上下册`
