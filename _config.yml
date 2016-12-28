@@ -1,8 +1,8 @@
 # Basic
-title: Zhenlin Yang's Blog
-subtitle: A Mobile Game Developer
-welcome_message: <a href="https://github.com/zhenlinyang" target="_blank">Visit My Github</a>
-description: Welcome to My Blog
+title: 杨振林的博客
+subtitle: 游戏开发者
+welcome_message: <a href="https://github.com/zhenlinyang" target="_blank">View on Github</a>
+description: 大家好，我是杨振林，一位 iOS / Android / Unity 开发者，希望和大家多多交流。
 creator: <a href="http://blog.yangzhenlin.com">Zhenlin Yang</a>
 
 url: "http://blog.yangzhenlin.com"
@@ -17,12 +17,12 @@ cover_color: red
 
 # The blog button should not be removed.
 blog_button:
-    title: Blog
-    description: Visit blog
+    title: 博客
+    description: Blog
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Weibo, description: My Weibo, url: 'http://weibo.com/lz0807fl'}
+    - {title: 微博, description: Weibo, url: 'http://weibo.com/lz0807fl'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
