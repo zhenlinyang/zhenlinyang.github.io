@@ -9,19 +9,43 @@ tags: Unity
 
 ## 摘要
 
-安卓环境下，通过更换或解密Unity-Mono加载的Assembly-CSharp.dll数据文件的方法，达到更新或加密代码的目的。
+安卓环境下，通过更换或解密 Unity-Mono 加载的 Assembly-CSharp.dll 数据文件的方法，达到更新或加密代码的目的。
+
+## 准备环境
+
+* Java
+
+* Android SDK
+
+* Android NDK
+
+* autoconf
+
+* automake
+
+* libtool
+
+* pkg-config
+
+> autoconf automake libtool pkg-config 四项可以使用 Homebrew 安装。
+
+> (1)获取 Homebrew `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+> (2)安装 `brew install autoconf automake libtool pkg-config`
 
 ## 正文
 
 //TODO
 
-## 环境
+## 测试环境
 
-操作系统 `macOS Sierra 10.12.2`
+* macOS Sierra 10.12.2
 
-Unity `Unity 5.5.0f3`
+* Unity 5.5.0f3 for Mac
 
-Mono `mono unity-5.5` [https://github.com/Unity-Technologies/mono/tree/unity-5.5](https://github.com/Unity-Technologies/mono/tree/unity-5.5)
+* mono unity-5.5 [https://github.com/Unity-Technologies/mono/tree/unity-5.5](https://github.com/Unity-Technologies/mono/tree/unity-5.5)
+
+* Android NDK r10e
 
 ## 技术支持
 
