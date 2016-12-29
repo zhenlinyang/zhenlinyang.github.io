@@ -34,10 +34,8 @@ tags: Unity
 * pkg-config
 
 > autoconf automake libtool pkg-config 四项可以使用 Homebrew 安装。
-
-> (1)获取 Homebrew `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-
-> (2)安装 `brew install autoconf automake libtool pkg-config`
+(1) 获取 Homebrew `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+(2) 安装 `brew install autoconf automake libtool pkg-config`
 
 ## 正文
 
