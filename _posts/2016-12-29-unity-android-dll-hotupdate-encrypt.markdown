@@ -11,13 +11,19 @@ tags: Unity
 
 安卓环境下，通过更换或解密 Unity-Mono 加载的 Assembly-CSharp.dll 数据文件的方法，达到更新或加密代码的目的。
 
-## 准备环境
+## 工具与环境
 
-* Java
+* OS `macOS Sierra 10.12.2`
+
+* Mono `mono unity-5.5` [https://github.com/Unity-Technologies/mono/tree/unity-5.5](https://github.com/Unity-Technologies/mono/tree/unity-5.5)
+
+* Unity `Unity 5.5.0f3 for Mac`
+
+* Java `JavaSE-1.8`
 
 * Android SDK
 
-* Android NDK
+* Android NDK `Android NDK r10e`
 
 * autoconf
 
@@ -36,16 +42,6 @@ tags: Unity
 ## 正文
 
 //TODO
-
-## 测试环境
-
-* macOS Sierra 10.12.2
-
-* Unity 5.5.0f3 for Mac
-
-* mono unity-5.5 [https://github.com/Unity-Technologies/mono/tree/unity-5.5](https://github.com/Unity-Technologies/mono/tree/unity-5.5)
-
-* Android NDK r10e
 
 ## 技术支持
 
