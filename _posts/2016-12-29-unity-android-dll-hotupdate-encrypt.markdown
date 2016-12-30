@@ -212,6 +212,8 @@ mono_image_open_from_data_with_name (char *data, guint32 data_len, gboolean need
 }
 ```
 
+[热更新DLL版本详情](https://github.com/zhenlinyang/mono/commit/a936f250c33b0fe216f9a3fad37aa3f4c129730e)
+
 ## 技术支持
 
 [Unity-Technologies/mono](https://github.com/Unity-Technologies/mono)
