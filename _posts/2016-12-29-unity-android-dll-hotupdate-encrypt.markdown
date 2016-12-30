@@ -79,6 +79,9 @@ drwxr-xr-x  4 lbs  staff  136 12 30 11:42 x86
 
 在`./builds/embedruntimes/android`目录下，会有`armv7a`和`x86`环境下的`libmono.so`。
 
+### DLL热更新与加密原理
+
+打开`./mono/metadata/image.c`文件，找到`mono_image_open_from_data_with_name (char *data, guint32 data_len, gboolean need_copy, MonoImageOpenStatus *status, gboolean refonly, const char *name)`函数。
 
 ## 技术支持
 
