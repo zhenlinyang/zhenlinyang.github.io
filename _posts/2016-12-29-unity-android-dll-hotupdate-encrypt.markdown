@@ -67,7 +67,7 @@ tags: Unity
 
 `build_runtime_android.sh`删除编译`armv5`、`armv6_vfp`，只剩下`armv7a`。
 
-在 mono 根目录下，执行`./external/buildscripts/build_runtime_android.sh`。大约会执行几分钟的时间。
+**【步骤三】**在 mono 根目录下，执行`./external/buildscripts/build_runtime_android.sh`。
 
 编译成功后，终端会提示：
 
