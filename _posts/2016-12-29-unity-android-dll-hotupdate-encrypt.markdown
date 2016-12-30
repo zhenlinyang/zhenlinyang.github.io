@@ -41,19 +41,27 @@ tags: Unity
 
 ## 正文
 
-### 编译Mono
+### 编译 libmono.so
 
-*【步骤一】*选择 Unity 版本对应的 Mono 分支，例如本文选择 Unity 5.5.0f3 则对应 Mono 的版本是 unity-5.5 。进入 mono 根目录，mono 根目录是编译 Mono 的工作目录。
+**【步骤一】**选择 Unity 版本对应的 Mono 分支，例如本文选择 Unity 5.5.0f3 则对应 Mono 的版本是 unity-5.5。进入 mono 根目录，mono 根目录是编译 Mono 的工作目录。
 
-*【步骤二】*修改 `./external/buildscripts/build_runtime_android.sh` 和 `./external/buildscripts/build_runtime_android_x86.sh`
+**【步骤二】**修改 `./external/buildscripts/build_runtime_android.sh` 和 `./external/buildscripts/build_runtime_android_x86.sh`
+
+`build_runtime_android_x86.sh` 主要负责编译 x86 架构下的 libmono.so。
+
+`build_runtime_android.sh` 主要负责编译 arm 架构下的 libmono.so，然后调用`build_runtime_android_x86.sh`。
 
 //TODO android 配图 和 android_x86 配图
 
-build_runtime_android.sh 将 CFLAGS 下的 -g 修改为 -O2
+`build_runtime_android_x86.sh` 去掉 `-g`，去掉调试符号。
+
+`build_runtime_android.sh` 将 CFLAGS 下的 `-g` 修改为 `-O2`，去掉调试符号，并增加优化符号。
 
 > `-g` 调试符号
 >
 > `-O2` 优化符号
+
+注意：“O”是英文第15个字母的大写，不是零。
 
 //未完待续
 
