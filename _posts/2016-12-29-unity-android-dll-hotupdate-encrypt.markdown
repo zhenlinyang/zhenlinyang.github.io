@@ -79,7 +79,7 @@ drwxr-xr-x  4 lbs  staff  136 12 30 11:40 armv7a
 drwxr-xr-x  4 lbs  staff  136 12 30 11:42 x86
 ```
 
-在`./builds/embedruntimes/android`目录下，会有`armv7a`和`x86`环境下的`libmono.so`。
+在`./builds/embedruntimes/android`目录下，会有`armv7a`和`x86`架构下的`libmono.so`。
 
 ### DLL热更新与加密原理
 
@@ -213,8 +213,11 @@ mono_image_open_from_data_with_name (char *data, guint32 data_len, gboolean need
 	return register_image (image);
 }
 ```
-
 [热更新DLL版本详情](https://github.com/zhenlinyang/mono/commit/a936f250c33b0fe216f9a3fad37aa3f4c129730e)
+
+### 后续工作
+
+修改代码后，重新编译 Mono。将`./builds/embedruntimes/android`目录中对应`armv7a`和`x86`架构下的`libmono.so`分别替换 Unity 导出的 Android 工程中的`libmono.so`。然后就可以进行安卓打包了。
 
 ## 技术支持
 
