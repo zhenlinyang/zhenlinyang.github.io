@@ -153,15 +153,15 @@ mono_image_open_from_data_with_name (char *data, guint32 data_len, gboolean need
 	int datasize = 0;
 	if(name != NULL && strstr (name, "Assembly-CSharp.dll"))
 	{
-		//重新计算路径
+		//重新计算路径，这里假设包名以“com.”开头。
 		const char *_pack = strstr (name, "com.");
 		const char *_pfie = strstr (name, "-");
 		char _name[512];
 		memset(_name, 0, 512);
 		int _len0 = (int)(_pfie - _pack);
-		memcpy(_name, "/data/data/", 11);
-		memcpy(_name + 11, _pack, _len0);
-		memcpy(_name + 11 + _len0, "/files/Assembly-CSharp.dll", 26);
+		memcpy(_name, "/data/data/", 11);	//_name = "/data/data/"
+		memcpy(_name + 11, _pack, _len0);	//_name = "/data/data/com.Company.ProductName"
+		memcpy(_name + 11 + _len0, "/files/Assembly-CSharp.dll", 26);	//_name = "/data/data/com.Company.ProductName/files/Assembly-CSharp.dll"
 		char *bytes = ReadStringFromFile (_name, &datasize);
 		if (datasize > 0)
 		{
@@ -194,7 +194,7 @@ mono_image_open_from_data_with_name (char *data, guint32 data_len, gboolean need
 	////////Modify Begin////////
 	if(datasize > 0 && data != 0)
 	{
-		g_free (data);
+		g_free (data);	//释放新 DLL 的数据
 	}
 	////////Modify End////////
 
