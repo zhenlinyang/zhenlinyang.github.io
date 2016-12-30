@@ -83,6 +83,135 @@ drwxr-xr-x  4 lbs  staff  136 12 30 11:42 x86
 
 打开`./mono/metadata/image.c`文件，找到`mono_image_open_from_data_with_name (char *data, guint32 data_len, gboolean need_copy, MonoImageOpenStatus *status, gboolean refonly, const char *name)`函数。
 
+参数说明
+
+`char *data` DLL数据的指针
+
+`guint32 data_len` DLL数据的长度
+
+`const char *name` DLL名
+
+从参数可以看出，进入`mono_image_open_from_data_with_name`函数后，通过辨认`name`，可以对`data`和`data_len`做出修改，从而影响实际加载的DLL。
+
+### DLL 加密与解密
+
+//TODO 解密算法图
+
+从 Unity 导出 Android 工程后，可以拿到`Assembly-CSharp.dll`，在 Unity 中编写的大多数代码都会在这个动态链接库下。通过一些加密算法对此 DLL 进行加密后，初学者使用一些反编译工具就无法看到源代码了。示例工程中，首先将`Assembly-CSharp.dll`的首字节+1（加密），然后在`mono_image_open_from_data_with_name`中将`Assembly-CSharp.dll`的首字节-1（解密），从而实现了对 DLL 的加密过程。
+
+### DLL 热更新
+
+首先在`mono_image_open_from_data_with_name`函数上面补充两个函数。实现从可读写路径中读取DLL的操作。
+
+```
+static FILE *OpenFileWithPath(const char *path)
+{
+    const char *fileMode = "rb";
+    return fopen (path, fileMode);
+}
+
+static char *ReadStringFromFile(const char *pathName, int *size)
+{
+    FILE *file = OpenFileWithPath (pathName);
+    if (file == NULL)
+    {
+        return 0;
+    }
+    fseek (file, 0, SEEK_END);
+    int length = ftell(file);
+    fseek (file, 0, SEEK_SET);
+    if (length < 0)
+    {
+        fclose (file);
+        return 0;
+    }
+    *size = length;
+    char *outData = g_try_malloc (length);
+    int readLength = fread (outData, 1, length, file);
+    fclose(file);
+    if (readLength != length)
+    {
+        g_free (outData);
+        return 0;
+    }
+    return outData;
+}
+```
+
+改写`mono_image_open_from_data_with_name`函数，当发现可读写路径中存在`/data/data/包名/files/Assembly-CSharp.dll`时，加载新的DLL。
+
+```
+MonoImage *
+mono_image_open_from_data_with_name (char *data, guint32 data_len, gboolean need_copy, MonoImageOpenStatus *status, gboolean refonly, const char *name)
+{
+
+	////////Modify Begin////////
+	int datasize = 0;
+	if(name != NULL && strstr (name, "Assembly-CSharp.dll"))
+	{
+		//重新计算路径
+		const char *_pack = strstr (name, "com.");
+		const char *_pfie = strstr (name, "-");
+		char _name[512];
+		memset(_name, 0, 512);
+		int _len0 = (int)(_pfie - _pack);
+		memcpy(_name, "/data/data/", 11);
+		memcpy(_name + 11, _pack, _len0);
+		memcpy(_name + 11 + _len0, "/files/Assembly-CSharp.dll", 26);
+		char *bytes = ReadStringFromFile (_name, &datasize);
+		if (datasize > 0)
+		{
+			data = bytes;
+			data_len = datasize;
+		}
+	}
+	////////Modify End////////
+
+	MonoCLIImageInfo *iinfo;
+	MonoImage *image;
+	char *datac;
+
+	if (!data || !data_len) {
+		if (status)
+			*status = MONO_IMAGE_IMAGE_INVALID;
+		return NULL;
+	}
+	datac = data;
+	if (need_copy) {
+		datac = g_try_malloc (data_len);
+		if (!datac) {
+			if (status)
+				*status = MONO_IMAGE_ERROR_ERRNO;
+			return NULL;
+		}
+		memcpy (datac, data, data_len);
+	}
+
+	////////Modify Begin////////
+	if(datasize > 0 && data != 0)
+	{
+		g_free (data);
+	}
+	////////Modify End////////
+
+	image = g_new0 (MonoImage, 1);
+	image->raw_data = datac;
+	image->raw_data_len = data_len;
+	image->raw_data_allocated = need_copy;
+	image->name = (name == NULL) ? g_strdup_printf ("data-%p", datac) : g_strdup(name);
+	iinfo = g_new0 (MonoCLIImageInfo, 1);
+	image->image_info = iinfo;
+	image->ref_only = refonly;
+	image->ref_count = 1;
+
+	image = do_mono_image_load (image, status, TRUE, TRUE);
+	if (image == NULL)
+		return NULL;
+
+	return register_image (image);
+}
+```
+
 ## 技术支持
 
 [Unity-Technologies/mono](https://github.com/Unity-Technologies/mono)
