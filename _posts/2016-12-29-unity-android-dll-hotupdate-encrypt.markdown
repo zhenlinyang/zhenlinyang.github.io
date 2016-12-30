@@ -51,7 +51,9 @@ tags: Unity
 
 `build_runtime_android.sh`主要负责编译 arm 架构下的 libmono.so，然后调用`build_runtime_android_x86.sh`。
 
-//TODO android 配图 和 android_x86 配图
+![](http://source.yangzhenlin.com/unity-android-dll-hotupdate-encrypt/android-x86.png)
+
+![](http://source.yangzhenlin.com/unity-android-dll-hotupdate-encrypt/android.png)
 
 `build_runtime_android_x86.sh`去掉`-g`，去掉调试符号。
 
@@ -95,7 +97,7 @@ drwxr-xr-x  4 lbs  staff  136 12 30 11:42 x86
 
 ### DLL 加密与解密
 
-//TODO 解密算法图
+![](http://source.yangzhenlin.com/unity-android-dll-hotupdate-encrypt/image-c-dll-decryption.png)
 
 从 Unity 导出 Android 工程后，可以拿到`Assembly-CSharp.dll`，在 Unity 中编写的大多数代码都会在这个动态链接库下。通过一些加密算法对此 DLL 进行加密后，初学者使用一些反编译工具就无法看到源代码了。示例工程中，首先将`Assembly-CSharp.dll`的首字节+1（加密），然后在`mono_image_open_from_data_with_name`中将`Assembly-CSharp.dll`的首字节-1（解密），从而实现了对 DLL 的加密过程。
 
