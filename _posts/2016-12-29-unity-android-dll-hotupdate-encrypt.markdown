@@ -87,13 +87,13 @@ drwxr-xr-x  4 lbs  staff  136 12 30 11:42 x86
 
 参数说明
 
-`char *data` DLL数据的指针
+`char *data` DLL 数据的指针
 
-`guint32 data_len` DLL数据的长度
+`guint32 data_len` DLL 数据的长度
 
-`const char *name` DLL名
+`const char *name` DLL 名
 
-从参数可以看出，进入`mono_image_open_from_data_with_name`函数后，通过辨认`name`，可以对`data`和`data_len`做出修改，从而影响实际加载的DLL。
+从参数可以看出，进入`mono_image_open_from_data_with_name`函数后，通过辨认`name`，可以对`data`和`data_len`做出修改，从而影响实际加载的 DLL。
 
 ### DLL 加密与解密
 
@@ -103,7 +103,7 @@ drwxr-xr-x  4 lbs  staff  136 12 30 11:42 x86
 
 ### DLL 热更新
 
-首先在`mono_image_open_from_data_with_name`函数上面补充两个函数。实现从可读写路径中读取DLL的操作。
+首先在`mono_image_open_from_data_with_name`函数上面补充两个函数。实现从可读写路径中读取 DLL 的操作。
 
 ```
 static FILE *OpenFileWithPath(const char *path)
@@ -140,7 +140,7 @@ static char *ReadStringFromFile(const char *pathName, int *size)
 }
 ```
 
-改写`mono_image_open_from_data_with_name`函数，当发现可读写路径中存在`/data/data/包名/files/Assembly-CSharp.dll`时，加载新的DLL。
+改写`mono_image_open_from_data_with_name`函数，当发现可读写路径中存在`/data/data/包名/files/Assembly-CSharp.dll`时，加载新的 DLL。
 
 ```
 MonoImage *
@@ -213,7 +213,7 @@ mono_image_open_from_data_with_name (char *data, guint32 data_len, gboolean need
 	return register_image (image);
 }
 ```
-[热更新DLL版本详情](https://github.com/zhenlinyang/mono/commit/a936f250c33b0fe216f9a3fad37aa3f4c129730e)
+[热更新 DLL 版本详情 on Github](https://github.com/zhenlinyang/mono/commit/a936f250c33b0fe216f9a3fad37aa3f4c129730e)
 
 ### 后续工作
 
