@@ -93,6 +93,8 @@ drwxr-xr-x  4 lbs  staff  136 12 30 11:42 x86
 
 `const char *name` DLL 名
 
+> 使用`glib`库的`g_message`方法，在 Android Logcat 中输出 Assembly-CSharp.dll 的 `name = /data/app/包名-1.apk/assets/bin/Data/Managed/Assembly-CSharp.dll`
+
 从参数可以看出，进入`mono_image_open_from_data_with_name`函数后，通过辨认`name`，可以对`data`和`data_len`做出修改，从而影响实际加载的 DLL。
 
 ### DLL 加密与解密
