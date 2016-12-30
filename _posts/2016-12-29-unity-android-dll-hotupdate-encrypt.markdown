@@ -63,7 +63,19 @@ tags: Unity
 
 注意：“O”是英文第15个字母的大写，不是零。
 
-//未完待续
+`build_runtime_android.sh` 删除编译 `armv5`、`armv6_vfp`，只剩下 `armv7a`。
+
+在 mono 根目录下，执行 `./external/buildscripts/build_runtime_android.sh`。大约会执行几分钟的时间。
+
+编译成功后，终端会提示：
+
+```bash
+Build SUCCESS!
+Build failed? Android STATIC/SHARED library cannot be found... Found        4 libs under builds/embedruntimes/android
+total 0
+drwxr-xr-x  4 lbs  staff  136 12 30 11:40 armv7a
+drwxr-xr-x  4 lbs  staff  136 12 30 11:42 x86
+```
 
 ## 技术支持
 
