@@ -60,7 +60,7 @@ private static extern float FooPluginFunction ();
 
 #### 调用 Java
 
-从原理上讲，Unity 先通过 C，然后通过 JNI，最终连接到 Java。本文略过详细过程。
+> 从原理上讲，Unity 先通过 C，然后通过 JNI，最终连接到 Java。本文略过详细过程。
 
 Unity 封装了两个类，方便我们直接使用 Java。
 
@@ -99,7 +99,7 @@ AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
 UnitySendMessage ("GO", "M", "P");
 ```
 
-表示向 Unity 名字为`G`的`GameObject`挂在的脚本中，声明为`M(string parameter)`的方法发送消息 `"P"`。注意避免多个脚本同时存在方法`M(string parameter)`。
+表示向 Unity 名字为`G`的`GameObject`挂载的脚本中，声明为`M(string parameter)`的方法发送带一个参数`"P"`的消息。注意避免多个脚本同时存在方法`M(string parameter)`。
 
 ### Unity 接入 Android 平台插件
 
