@@ -9,7 +9,7 @@ tags: Unity
 
 ## 摘要
 
-本文主要介绍，在安卓环境下，通过更换或解密 Unity-Mono 加载的 Assembly-CSharp.dll 数据文件的方法，达到更新或加密代码的目的。
+本文主要介绍，在安卓环境下，通过更换或解密 Unity-Mono 加载的 Assembly-CSharp.dll 数据文件的方法，达到更新或加密代码的目的。首先介绍如何编译生成 libmono.so，然后讲述通过修改 `mono - image.c - mono_image_open_from_data_with_name` 方法达到修改 DLL 的目的。
 
 ## 工具与环境
 
@@ -66,6 +66,8 @@ tags: Unity
 > `-g` 调试符号
 >
 > `-O2` 优化符号
+> 
+> 详见 [https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html)
 
 注意：“O”是英文第15个字母的大写，不是零。
 
