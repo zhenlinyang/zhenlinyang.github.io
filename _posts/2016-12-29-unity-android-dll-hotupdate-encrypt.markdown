@@ -19,7 +19,7 @@ tags: Unity
 
 * Unity `Unity 5.5.0f3 for Mac`
 
-* Java `JavaSE-1.8`
+* Java
 
 * Android SDK
 
