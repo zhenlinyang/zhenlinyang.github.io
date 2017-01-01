@@ -60,7 +60,7 @@ private static extern float FooPluginFunction ();
 
 #### 调用 Java
 
-> 从原理上讲，Unity 先通过 C，然后通过 JNI，最终连接到 Java。本文略过详细过程。
+> 从原理上讲，Unity 通过 C 和 JNI 连接到 Java。本文略过详细过程。
 
 Unity 封装了两个类，方便我们直接使用 Java。
 
