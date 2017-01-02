@@ -93,13 +93,13 @@ AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
 
 #### Java 向 Unity 发送通知
 
-在 Java 中直接使用 UnitySendMessage 方法。
+在 Java 中直接使用 UnitySendMessage 静态方法。
 
 ```
-UnitySendMessage ("GO", "M", "P");
+UnityPlayer.UnitySendMessage ("G", "M", "P");
 ```
 
-表示向 Unity 名字为`G`的`GameObject`挂载的脚本中，声明为`M(string parameter)`的方法发送带一个参数`"P"`的消息。注意避免多个脚本同时存在方法`M(string parameter)`。
+表示向 Unity 名字为`G`的`GameObject`挂载的脚本中，声明为`public void M(string parameter)`的方法，发送一个参数为字符串`"P"`的消息。注意避免多个脚本同时存在方法`M`。
 
 ### Unity 接入 Android 平台插件
 
