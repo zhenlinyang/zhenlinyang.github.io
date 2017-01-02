@@ -217,6 +217,14 @@ zqlt:classes lbs$ jar -cvf myplugin.jar *
 
 插件使用请参照“正文 - Unity 与 Android 交互的方式 - 调用 Java”。
 
+#### 关于 UnityPlayer
+
+`com.unity3d.player.UnityPlayer`是 Unity Android 中一个非常重要的连接类。
+
+* `public static void UnityPlayer.UnitySendMessage(String arg0, String arg1, String arg2)`通过此静态方法可以向 Unity 中的脚本发信。
+
+* `public static android.app.Activity currentActivity;`通过此静态字段可以获取当前的 Activity。
+
 ## 参考资料
 
 [Unity - Manual: Building Plugins for Android](https://docs.unity3d.com/Manual/PluginsForAndroid.html)
