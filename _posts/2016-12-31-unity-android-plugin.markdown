@@ -9,7 +9,7 @@ tags: Unity
 
 ## 概述
 
-虽然使用 Unity 可以完成制作一款游戏的绝大部分工作，但研发过程中难免会遇到以下几个问题，需要我们建立 Unity 与 Android 的交互。
+虽然使用 Unity 可以完成制作一款游戏的绝大部分工作，但研发过程中难免会遇到以下几个问题，需要建立 Unity 与 Android 的交互。
 
 1. 接入代理商的登录和支付功能，但代理商只提供 Android 平台 SDK。
 
@@ -17,7 +17,7 @@ tags: Unity
 
 3. 接入微博、微信等平台的分享功能。
 
-//TODO 补充文本
+本文通过“Unity 与 Android 交互的方式”和“为 Unity 开发 Android 插件”两个部分，讲述如何进行Unity Android 插件开发与SDK接入。
 
 ## 工具与环境
 
