@@ -147,8 +147,10 @@ Unity 提供两种方式放置插件，推荐使用第二种方式。
 Assets/Plugins/Android/libs/*.jar
 Assets/Plugins/Android/libs/x86/*.so
 Assets/Plugins/Android/libs/armeabi-v7a/*.so
-Assets/Plugins/Android/Manifest.xml
+Assets/Plugins/Android/AndroidManifest.xml
 ```
+
+Unity 会将`Assets/Plugins/Android/AndroidManifest.xml`做为 Android 工程的 AndroidManifest。
 
 **多个插件**
 
@@ -158,16 +160,18 @@ Assets/Plugins/Android/Manifest.xml
 Assets/Plugins/Android/MyPlugin/libs/*.jar
 Assets/Plugins/Android/MyPlugin/libs/x86/*.so
 Assets/Plugins/Android/MyPlugin/libs/armeabi-v7a/*.so
-Assets/Plugins/Android/MyPlugin/Manifest.xml
+Assets/Plugins/Android/MyPlugin/AndroidManifest.xml
 Assets/Plugins/Android/MyPlugin/project.properties
 ```
 
-其中`project.properties`内容如下，Android Target 版本根据实际情况填写。
+`project.properties`内容如下，Android Target 版本根据实际情况填写。
 
 ```
 target=android-23
 android.library=true
 ```
+
+Unity 会将所有插件目录的`AndroidManifest.xml`文件与 Unity 自身的`AndroidManifest.xml`文件合并，做为 Android 工程的 AndroidManifest。
 
 #### 插件制作流程
 
@@ -207,7 +211,11 @@ zqlt:classes lbs$ jar -cvf myplugin.jar *
 正在添加: myplugin/CustomPlugin.class(输入 = 509) (输出 = 320)(压缩了 37%)
 ```
 
-将`myplugin.jar`放入 Unity ，完成插件。
+修改`AndroidManifest.xml`，删除多余的`application`部分。
+
+将`myplugin.jar`、`project.properties`、`AndroidManifest.xml`放入 Unity，完成插件制作。
+
+插件使用请参照“正文 - Unity 与 Android 交互的方式 - 调用 Java”。
 
 ## 参考资料
 
