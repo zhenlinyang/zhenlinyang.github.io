@@ -137,7 +137,7 @@ UnityPlayer.UnitySendMessage ("G", "M", "P");
 
 #### 插件放置位置
 
-Unity 提供两种方式放置插件
+Unity 提供两种方式放置插件，推荐使用第二种方式。
 
 **单一插件**
 
@@ -171,7 +171,43 @@ android.library=true
 
 #### 插件制作流程
 
-//TODO
+打开 Eclipse，创建一个 Android Application，注意 Mininum Required SDK 需要小于等于 Unity Player Settings 中设定的值，最好设置成一样的。
+
+//图片
+
+在 Configure Project 中设置项目是一个类库。
+
+//图片
+
+打开 Unity 的安装路径，找到`classes.jar`，复制到`libs`目录中。
+
+`classes.jar`中包含类`com.unity3d.player.UnityPlayer`，`UnityPlayer` 负责连接 Unity 与 Android 插件。
+
+创建一个测试类`CustomPlugin`，添加一个方法`SendToUnity`向 Unity 发信。
+
+```
+package myplugin;
+
+import com.unity3d.player.UnityPlayer;
+
+public class CustomPlugin {
+	public void SendToUnity() {
+		UnityPlayer.UnitySendMessage("G", "M", "P");
+	}
+}
+```
+
+打开项目目录，进入`bin/classes`，将`CustomPlugin.java`生成的`CustomPlugin.class`打成 Jar 包。
+
+```
+zqlt:~ lbs$ cd /Users/lbs/Documents/workspace/myplugin/bin/classes 
+zqlt:classes lbs$ jar -cvf myplugin.jar *
+已添加清单
+正在添加: myplugin/(输入 = 0) (输出 = 0)(存储了 0%)
+正在添加: myplugin/CustomPlugin.class(输入 = 509) (输出 = 320)(压缩了 37%)
+```
+
+将`myplugin.jar`放入 Unity ，完成插件。
 
 ## 参考资料
 
