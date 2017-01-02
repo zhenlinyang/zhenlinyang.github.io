@@ -221,6 +221,7 @@ mono_image_open_from_data_with_name (char *data, guint32 data_len, gboolean need
 	return register_image (image);
 }
 ```
+
 [热更新 DLL 版本详情 on Github](https://github.com/zhenlinyang/mono/commit/a936f250c33b0fe216f9a3fad37aa3f4c129730e)
 
 ### 后续工作
