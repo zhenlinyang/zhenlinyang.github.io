@@ -101,9 +101,68 @@ UnityPlayer.UnitySendMessage ("G", "M", "P");
 
 表示向 Unity 名字为`G`的`GameObject`挂载的脚本中，声明为`public void M(string parameter)`的方法，发送一个参数为字符串`"P"`的消息。注意避免多个脚本同时存在方法`M`。
 
-### Unity 接入 Android 平台插件
+### 为 Unity 开发 Android 插件
 
-// TODO
+首先创建 `Assets/Plugins/Android/`目录，Android 插件都放置在这个目录中。
+
+#### 是否需要继承 UnityPlayerActivity
+
+`UnityPlayerActivity`是 Unity Android 程序的 Main Activity，游戏启动时会首先进入。
+
+如果我们需要改写或者扩展`UnityPlayerActivity`，需要创建一个子类`CustomUnityPlayerActivity`继承自`UnityPlayerActivity`，同时创建`AndroidManifest.xml`包含如下信息。
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.company.product">
+  <application android:icon="@drawable/app_icon" android:label="@string/app_name">
+    <activity android:name=".CustomUnityPlayerActivity"
+             android:label="@string/app_name"
+             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+  </application>
+</manifest>
+```
+
+**兼容性问题**
+
+1. Android 应用只能存在一个 Main Activity，因而一个 Unity 工程最多只能存在一个继承自`UnityPlayerActivity`的插件。
+
+2. 继承和替换 Unity 原生的 UnityPlayerActivity，可能导致其他插件无法正常运行，因为大多数插件会默认`UnityPlayerActivity`是 Main Activity。
+
+从上述两点可以看出，在非必要情况下，不要继承`UnityPlayerActivity`。
+
+#### 插件放置位置
+
+Unity 提供两种方式放置插件
+
+**单一插件**
+
+如果只有一个插件，或者插件继承了`UnityPlayerActivity`，插件放置形式如下。
+
+```
+Assets/Plugins/Android/libs/*.jar
+Assets/Plugins/Android/libs/x86/*.so
+Assets/Plugins/Android/libs/armeabi-v7a/*.so
+Assets/Plugins/Android/Manifest.xml
+```
+
+**多个插件**
+
+如果存在多个插件，应为每一个插件创建一个子目录，插件放置形式如下。
+```
+Assets/Plugins/Android/MyPlugin/libs/*.jar
+Assets/Plugins/Android/MyPlugin/libs/x86/*.so
+Assets/Plugins/Android/MyPlugin/libs/armeabi-v7a/*.so
+Assets/Plugins/Android/MyPlugin/Manifest.xml
+```
+
+#### 插件制作流程
+
+//TODO
 
 ## 参考资料
 
