@@ -153,11 +153,20 @@ Assets/Plugins/Android/Manifest.xml
 **多个插件**
 
 如果存在多个插件，应为每一个插件创建一个子目录，插件放置形式如下。
+
 ```
 Assets/Plugins/Android/MyPlugin/libs/*.jar
 Assets/Plugins/Android/MyPlugin/libs/x86/*.so
 Assets/Plugins/Android/MyPlugin/libs/armeabi-v7a/*.so
 Assets/Plugins/Android/MyPlugin/Manifest.xml
+Assets/Plugins/Android/MyPlugin/project.properties
+```
+
+其中`project.properties`内容如下，Android Target 版本根据实际情况填写。
+
+```
+target=android-23
+android.library=true
 ```
 
 #### 插件制作流程
