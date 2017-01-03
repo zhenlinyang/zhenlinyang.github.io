@@ -215,7 +215,17 @@ zqlt:classes lbs$ jar -cvf myplugin.jar *
 
 将`myplugin.jar`、`project.properties`、`AndroidManifest.xml`放入 Unity，完成插件制作。
 
-插件使用请参照“正文 - Unity 与 Android 交互的方式 - 调用 Java”。
+在 Unity 中封装对 Android 的调用。
+
+```
+public void Call_SendToUnity()
+{
+  using (AndroidJavaObject jo = new AndroidJavaObject ("myplugin.CustomEditor"))
+  {
+    jo.Call ("SendToUnity");
+  }
+}
+```
 
 #### 关于 UnityPlayer
 
