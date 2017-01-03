@@ -5,7 +5,7 @@ date: 2015-02-27 12:00:00.000000000 +08:00
 tags: Network
 ---
 
-作者：杨振林
+作者：杨振林 yangzhenlin.com
 
 本文讲解服务器配置SSL证书部署HTTPS网站。
 

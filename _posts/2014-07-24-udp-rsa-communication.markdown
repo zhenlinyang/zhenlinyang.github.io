@@ -5,7 +5,7 @@ date: 2014-07-24 12:00:00.000000000 +08:00
 tags: Java
 ---
 
-作者：杨振林
+作者：杨振林 yangzhenlin.com
 
 UDP 是User Datagram Protocol的简称， 中文名是用户数据报协议，是OSI（Open System Interconnection，开放式系统互联） 参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务。
 

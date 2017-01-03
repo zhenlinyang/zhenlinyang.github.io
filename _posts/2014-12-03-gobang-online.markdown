@@ -5,7 +5,7 @@ date: 2014-12-03 12:00:00.000000000 +08:00
 tags: Java
 ---
 
-作者：杨振林
+作者：杨振林 yangzhenlin.com
 
 /scr 目录下全部代码本人完成，课内作品，公开全部源代码，遵循General Public Licence协议。
 
