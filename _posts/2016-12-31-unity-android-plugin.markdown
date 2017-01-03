@@ -213,7 +213,7 @@ zqlt:classes lbs$ jar -cvf myplugin.jar *
 
 修改`AndroidManifest.xml`，删除多余的`application`部分。
 
-将`myplugin.jar`、`project.properties`、`AndroidManifest.xml`放入 Unity，完成插件制作。
+将`myplugin.jar`、`project.properties`、`AndroidManifest.xml`放入 Unity。
 
 在 Unity 中封装对 Android 的调用。
 
