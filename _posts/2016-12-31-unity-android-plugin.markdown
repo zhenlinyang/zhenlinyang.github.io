@@ -220,7 +220,7 @@ zqlt:classes lbs$ jar -cvf myplugin.jar *
 ```
 public void Call_SendToUnity()
 {
-  using (AndroidJavaObject jo = new AndroidJavaObject ("myplugin.CustomEditor"))
+  using (AndroidJavaObject jo = new AndroidJavaObject ("myplugin.CustomPlugin"))
   {
     jo.Call ("SendToUnity");
   }
