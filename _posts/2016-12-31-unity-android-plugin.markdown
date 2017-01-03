@@ -7,6 +7,8 @@ tags: Unity
 
 作者：杨振林 yangzhenlin.com
 
+本篇是[Unity iOS 插件开发与SDK接入](http://yangzhenlin.com/unity-ios-plugin/)的姊妹篇。
+
 ## 概述
 
 虽然使用 Unity 可以完成制作一款游戏的绝大部分工作，但研发过程中难免会遇到以下几个问题，需要建立 Unity 与 Android 的交互。
@@ -41,7 +43,7 @@ Unity 调用 Android 主要分为两种形式。
 
 #### 调用 C/C++
 
-Unity 为了避免 Name mangling (名字修饰)，只接受 C 形式的声明，所以 C++ 函数需要包装成如下形式，提示编译器使用 C 的方式来处理函数。
+Unity 为了避免 Name mangling，只接受 C 形式的声明，所以 C++ 函数需要包装成如下形式，提示编译器使用 C 的方式来处理函数。
 
 ```
 extern "C" {
@@ -56,7 +58,7 @@ extern "C" {
 private static extern float FooPluginFunction ();
 ```
 
-注：此形式和针对 iOS 平台的 Unity 插件开发有共通之处。
+> 此形式和针对 iOS 平台的 Unity 插件开发有共通之处。
 
 #### 调用 Java
 
