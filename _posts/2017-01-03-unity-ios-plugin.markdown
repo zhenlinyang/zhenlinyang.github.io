@@ -38,6 +38,7 @@ Unity 通过 C 与 iOS 进行交互。因为 Objective-C 可以与 C/C++ 进行�
 iOS 部分
 
 MyPluginBridge.h
+
 ```
 #ifndef MyPluginBridge_h
 #define MyPluginBridge_h
@@ -64,6 +65,7 @@ extern "C"
 ```
 
 MyPluginBridge.m
+
 ```
 #import "MyPluginBridge.h"
 
@@ -160,21 +162,25 @@ private static void ModifyPBXProject(string path)
 }
 ```
 
-修改 SEARCH_PATHS
+**修改 SEARCH_PATHS**
+
 ```
 proj.SetBuildProperty(target, "LIBRARY_SEARCH_PATHS", "$(inherited)");
 proj.AddBuildProperty(target, "LIBRARY_SEARCH_PATHS", "$(SRCROOT)");
 proj.AddBuildProperty(target, "LIBRARY_SEARCH_PATHS", "$(PROJECT_DIR)/Libraries");
 ```
 
-添加 .framework/.tbd
+**添加 .framework/.tbd**
+
+bool 参数 true 表示框架是 optional，false 表示框架是 required。
+
 ```
 //苹果内购
-//bool 参数 true 表示框架是 optional，false 表示框架是 required。
 proj.AddFrameworkToProject(target, "StoreKit.framework", false);
 ```
 
-添加 OTHER_LDFLAGS
+**添加 OTHER_LDFLAGS**
+
 ```
 proj.AddBuildProperty(target, "OTHER_LDFLAGS", "-ObjC");
 ```
@@ -199,13 +205,15 @@ private static void ModifyPlist(string path)
 }
 ```
 
-设置语言
+**设置语言**
+
 ```
 //设置使用简体中文
 rootDict.SetString("CFBundleDevelopmentRegion", "zh_CN");
 ```
 
-iOS 10 设置使用权限说明
+**iOS 10 设置使用权限说明**
+
 ```
 //摄像机权限
 rootDict.SetString("NSCameraUsageDescription", "AR");
@@ -217,14 +225,16 @@ rootDict.SetString("NSLocationWhenInUseUsageDescription", "LBS");
 rootDict.SetString("NSMicrophoneUsageDescription", "VoiceChat");
 ```
 
-URL Scheme 添加白名单
+**URL Scheme 添加白名单**
+
 ```
 PlistElementArray LSApplicationQueriesSchemes = rootDict.CreateArray("LSApplicationQueriesSchemes");
 //微信
 LSApplicationQueriesSchemes.AddString("weixin");
 ```
 
-添加 URL Scheme
+**添加 URL Scheme**
+
 ```
 PlistElementArray urlTypes = rootDict.CreateArray("CFBundleURLTypes");
 
