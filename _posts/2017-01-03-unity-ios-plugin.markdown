@@ -40,12 +40,6 @@ iOS 部分
 MyPluginBridge.h
 
 ```
-#ifndef MyPluginBridge_h
-#define MyPluginBridge_h
-
-
-#endif /* MyPluginBridge_h */
-
 #import <Foundation/Foundation.h>
 
 @interface MyPluginBridge : NSObject
