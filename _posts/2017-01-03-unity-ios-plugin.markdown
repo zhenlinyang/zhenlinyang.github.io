@@ -225,7 +225,7 @@ rootDict.SetString("NSLocationWhenInUseUsageDescription", "LBS");
 rootDict.SetString("NSMicrophoneUsageDescription", "VoiceChat");
 ```
 
-URL Scheme 添加白名单
+添加第三方应用的 URL Scheme 到白名单
 
 ```
 PlistElementArray LSApplicationQueriesSchemes = rootDict.CreateArray("LSApplicationQueriesSchemes");
@@ -233,7 +233,7 @@ PlistElementArray LSApplicationQueriesSchemes = rootDict.CreateArray("LSApplicat
 LSApplicationQueriesSchemes.AddString("weixin");
 ```
 
-添加 URL Scheme
+添加自己应用的 URL Scheme
 
 ```
 PlistElementArray urlTypes = rootDict.CreateArray("CFBundleURLTypes");
