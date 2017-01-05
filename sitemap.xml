@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sitemapindex>
+    <sitemap>
+        <loc>http://yangzhenlin.com</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/book-list/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/kochcurve/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/algorithm-recursive-circulation/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/bmp-read-modify-save/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/udp-rsa-communication/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/gobang-online/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/ssl-https-nginx/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/unity-android-dll-hotupdate-encrypt/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/unity-android-plugin/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://yangzhenlin.com/unity-ios-plugin/</loc>
+        <lastmod>2017-01-05</lastmod>
+    </sitemap>
+</sitemapindex>
