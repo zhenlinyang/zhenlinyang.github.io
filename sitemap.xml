@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
     <url>
-        <loc>http://yangzhenlin.com</loc>
+        <loc>http://www.yangzhenlin.com</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/book-list/</loc>
+        <loc>http://www.yangzhenlin.com/book-list/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/kochcurve/</loc>
+        <loc>http://www.yangzhenlin.com/kochcurve/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/algorithm-recursive-circulation/</loc>
+        <loc>http://www.yangzhenlin.com/algorithm-recursive-circulation/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/bmp-read-modify-save/</loc>
+        <loc>http://www.yangzhenlin.com/bmp-read-modify-save/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/udp-rsa-communication/</loc>
+        <loc>http://www.yangzhenlin.com/udp-rsa-communication/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/gobang-online/</loc>
+        <loc>http://www.yangzhenlin.com/gobang-online/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/ssl-https-nginx/</loc>
+        <loc>http://www.yangzhenlin.com/ssl-https-nginx/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/unity-android-dll-hotupdate-encrypt/</loc>
+        <loc>http://www.yangzhenlin.com/unity-android-dll-hotupdate-encrypt/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/unity-android-plugin/</loc>
+        <loc>http://www.yangzhenlin.com/unity-android-plugin/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>http://yangzhenlin.com/unity-ios-plugin/</loc>
+        <loc>http://www.yangzhenlin.com/unity-ios-plugin/</loc>
         <priority>1.00</priority>
         <lastmod>2017-01-05</lastmod>
         <changefreq>weekly</changefreq>

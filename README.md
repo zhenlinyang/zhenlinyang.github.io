@@ -1,6 +1,6 @@
-# Zhenlin Yang's Blog
+# 杨振林的博客 Zhenlin Yang's Blog
 
-http://yangzhenlin.com/
+http://www.yangzhenlin.com/
 
 ## Special Acknowledgement
 
