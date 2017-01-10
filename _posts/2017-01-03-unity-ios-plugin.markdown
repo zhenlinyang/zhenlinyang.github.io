@@ -7,7 +7,7 @@ tags: Unity
 
 作者：杨振林 yangzhenlin.com
 
-本篇是[Unity Android 插件开发与SDK接入](//yangzhenlin.com/unity-android-plugin/)的姊妹篇。
+本篇是[Unity Android 插件开发与SDK接入](//www.yangzhenlin.com/unity-android-plugin/)的姊妹篇。
 
 ## 概述
 

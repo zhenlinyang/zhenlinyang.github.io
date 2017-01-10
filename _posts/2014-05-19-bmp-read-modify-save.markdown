@@ -114,11 +114,11 @@ public void drawBMP() {
 
 至此，完成了读取操作。
 
-![](https://source.yangzhenlin.com/bmp-read-modify-save/001.png)
+![](//source.yangzhenlin.com/bmp-read-modify-save/001.png)
 
-![](https://source.yangzhenlin.com/bmp-read-modify-save/002.png)
+![](//source.yangzhenlin.com/bmp-read-modify-save/002.png)
 
-![](https://source.yangzhenlin.com/bmp-read-modify-save/003.png)
+![](//source.yangzhenlin.com/bmp-read-modify-save/003.png)
 
 ## 修改
 
@@ -283,7 +283,7 @@ public class DrawListener implements MouseListener {
 }
 ```
 
-![](https://source.yangzhenlin.com/bmp-read-modify-save/004.png)
+![](//source.yangzhenlin.com/bmp-read-modify-save/004.png)
 
 ## 保存
 
@@ -413,10 +413,10 @@ public void write(BufferedImage bf, String out) {
 }
 ```
 
-![](https://source.yangzhenlin.com/bmp-read-modify-save/005.png)
+![](//source.yangzhenlin.com/bmp-read-modify-save/005.png)
 
-![](https://source.yangzhenlin.com/bmp-read-modify-save/006.png)
+![](//source.yangzhenlin.com/bmp-read-modify-save/006.png)
 
 附JAR包
 
-[BMP.jar](https://source.yangzhenlin.com/bmp-read-modify-save/BMP.jar)
+[BMP.jar](//source.yangzhenlin.com/bmp-read-modify-save/BMP.jar)
