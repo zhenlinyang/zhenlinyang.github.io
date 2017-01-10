@@ -21,7 +21,7 @@ SSL证书的价格一般较贵，申请之前可以去网上搜索一下，最�
 
 由于沃通已经暂停了免费SSL证书的申请服务，大家可以去 [StartSSL](http://www.startssl.com/) 申请。
 
-![](http://source.yangzhenlin.com/ssl-https-nginx/001.png)
+![](https://source.yangzhenlin.com/ssl-https-nginx/001.png)
 
 申请之后等待CA签发，签发后取回SSL证书保存至本地。解压缩后选择“for Nginx”版本。Apache、Tomcat、IIS用户请自行选择适合版本。
 
@@ -64,20 +64,20 @@ rewrite ^(.*) https://$server_name$1 permanent;}
 
 访问HTTPS链接即可，例如 **https://secret.yangzhenlin.com/** 效果如下：
 
-![](http://source.yangzhenlin.com/ssl-https-nginx/002.png?imageView/2/h/500)
+![](https://source.yangzhenlin.com/ssl-https-nginx/002.png?imageView/2/h/500)
 
 查看证书信息如下：
 
-![](http://source.yangzhenlin.com/ssl-https-nginx/003.png?imageView/2/h/500)
+![](https://source.yangzhenlin.com/ssl-https-nginx/003.png?imageView/2/h/500)
 
-![](http://source.yangzhenlin.com/ssl-https-nginx/004.png?imageView/2/h/500)
+![](https://source.yangzhenlin.com/ssl-https-nginx/004.png?imageView/2/h/500)
 
 ## 可能出现的问题
 
 若使用的域名和向CA机构申请证书填写的域名不符，则会出错。在Chrome和Firefox浏览器中显示效果如下：
 
-![](http://source.yangzhenlin.com/ssl-https-nginx/005.png?imageView/2/h/500)
+![](https://source.yangzhenlin.com/ssl-https-nginx/005.png?imageView/2/h/500)
 
-![](http://source.yangzhenlin.com/ssl-https-nginx/006.png?imageView/2/h/500)
+![](https://source.yangzhenlin.com/ssl-https-nginx/006.png?imageView/2/h/500)
 
 出现此问题最可能的两个原因是：1、使用的域名和向CA机构申请证书填写的域名不符，2、CA机构不被系统信任（例如12306），让系统信任此CA机构后也能显示出安全的标识，所以12306提示安装根证书。

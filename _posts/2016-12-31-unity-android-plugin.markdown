@@ -7,7 +7,7 @@ tags: Unity
 
 作者：杨振林 yangzhenlin.com
 
-本篇是[Unity iOS 插件开发与SDK接入](http://yangzhenlin.com/unity-ios-plugin/)的姊妹篇。
+本篇是[Unity iOS 插件开发与SDK接入](https://yangzhenlin.com/unity-ios-plugin/)的姊妹篇。
 
 ## 概述
 
@@ -179,11 +179,11 @@ Unity 会将所有插件目录的`AndroidManifest.xml`文件与 Unity 自身的`
 
 打开 Eclipse，创建一个 Android Application，注意 Mininum Required SDK 需要小于等于 Unity Player Settings 中设定的值，最好设置成一样的。
 
-![](http://source.yangzhenlin.com/unity-android-plugin/new-android-application.png)
+![](https://source.yangzhenlin.com/unity-android-plugin/new-android-application.png)
 
 在 Configure Project 中设置项目是一个类库。
 
-![](http://source.yangzhenlin.com/unity-android-plugin/configure-project.png)
+![](https://source.yangzhenlin.com/unity-android-plugin/configure-project.png)
 
 打开 Unity 的安装路径，找到`classes.jar`，复制到`libs`目录中。
 

@@ -241,8 +241,8 @@ public class KochListener implements MouseListener {
 
 运行结果如下
 
-![](http://source.yangzhenlin.com/kochcurve/001.png)
+![](https://source.yangzhenlin.com/kochcurve/001.png)
 
 附jar包
 
-[koch.jar](http://source.yangzhenlin.com/kochcurve/koch.jar)
+[koch.jar](https://source.yangzhenlin.com/kochcurve/koch.jar)

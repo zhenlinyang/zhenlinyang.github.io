@@ -7,7 +7,7 @@ tags: Unity
 
 作者：杨振林 yangzhenlin.com
 
-本篇是[Unity Android 插件开发与SDK接入](http://yangzhenlin.com/unity-android-plugin/)的姊妹篇。
+本篇是[Unity Android 插件开发与SDK接入](https://yangzhenlin.com/unity-android-plugin/)的姊妹篇。
 
 ## 概述
 
@@ -114,7 +114,7 @@ UnitySendMessage("G", "A", "B");
 
 如果插件包含 .framework/.bundle 文件，需要在 Unity 导出 XCode 工程之后，手动拖入 Xcode 工程中。勾选`Copy items if needed`，选择`Create groups`，勾选`Add to targets: Unity-iPhone`。
 
-![](http://source.yangzhenlin.com/unity-ios-plugin/choose-options.png)
+![](https://source.yangzhenlin.com/unity-ios-plugin/choose-options.png)
 
 ### 在 Unity 中修改 PBXProject 和 Plist
 

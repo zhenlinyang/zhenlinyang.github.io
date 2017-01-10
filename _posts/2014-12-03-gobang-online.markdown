@@ -32,4 +32,4 @@ jar目录下为导出的带有Main方法的jar包。 server.jar 部署到服务�
 
 附工程包（更新至2014/12/3）
 
-[gobang-master.zip](http://source.yangzhenlin.com/gobang-master.zip)
+[gobang-master.zip](https://source.yangzhenlin.com/gobang-master.zip)
