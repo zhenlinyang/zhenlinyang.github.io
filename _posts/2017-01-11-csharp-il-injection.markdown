@@ -7,7 +7,7 @@ tags: C#
 
 作者：杨振林 yangzhenlin.com
 
-近期通过学习 [XLua](https://github.com/Tencent/xLua) 项目，学习到了一种在 C# 编译成 DLL 后，通过 IL 层面注入代码的可行性方案。
+近期通过学习 [xLua](https://github.com/Tencent/xLua) 项目，学习到了一种在 C# 编译成 DLL 后，通过 IL 层面注入代码的可行性方案。
 
 ## 参考资料
 
