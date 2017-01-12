@@ -43,7 +43,7 @@ Unity 调用 Android 主要分为两种形式。
 
 #### 调用 C/C++
 
-Unity 为了避免 Name mangling，只接受 C 形式的声明，所以 C++ 函数需要包装成如下形式，提示编译器使用 C 的方式来处理函数。
+Unity 为了避免 C++ 编译有 Name mangling 问题，只接受 C 形式的声明，所以 C++ 函数需要包装成如下形式，提示编译器使用 C 的方式来处理函数。
 
 ```
 extern "C" {

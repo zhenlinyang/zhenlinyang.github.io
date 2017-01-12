@@ -27,7 +27,11 @@ tags: Unity
 
 ### Unity 与 iOS 交互的方式
 
-Unity 通过 C 与 iOS 进行交互。因为 Objective-C 可以与 C/C++ 进行混编，所以使用 C 代码封装对应的 Objective-C 代码即可。
+Unity 通过 C 与 iOS 进行交互。
+
+Unity 不能直接调用 C++ 的原因是 C++ 编译会有 Name mangling 问题。
+
+Objective-C 可以与 C/C++ 进行混编。使用 C 代码封装对应的 Objective-C 代码，提供给 Unity 使用。
 
 > 注意：建议 C 函数名加有特定意义的前缀，避免函数名冲突。
 
