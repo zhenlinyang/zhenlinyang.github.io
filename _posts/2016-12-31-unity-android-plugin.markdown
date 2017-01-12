@@ -43,9 +43,9 @@ Unity 调用 Android 主要分为两种形式。
 
 #### 调用 C/C++
 
-Unity 为了避免 Name mangling，只接受 C 形式的声明，所以 C++ 函数需要包装成如下形式，提示编译器使用 C 的方式来处理函数。
+Unity 为了避免 C++ 编译有 Name mangling 问题，只接受 C 形式的声明，所以 C++ 函数需要包装成如下形式，提示编译器使用 C 的方式来处理函数。
 
-```
+```c
 extern "C" {
   float FooPluginFunction ();
 }
@@ -53,7 +53,7 @@ extern "C" {
 
 在 Unity C# 中，每个 C 函数需要定义为如下形式。
 
-```
+```csharp
 [DllImport ("PluginName")]
 private static extern float FooPluginFunction ();
 ```
@@ -74,21 +74,21 @@ Unity 封装了两个类，方便我们直接使用 Java。
 
 使用 AndroidJavaObject 创建对象，然后使用 Call 调用方法，接受模版指定返回类型。
 
-```
+```csharp
 AndroidJavaObject jo = new AndroidJavaObject("java.lang.String", "some_string");
 int hash = jo.Call<int>("hashCode"); 
 ```
 
 使用 AndroidJavaClass 获取类，然后使用 CallStatic 调用类方法，接受模版指定返回类型。
 
-```
+```csharp
 AndroidJavaClass cls = new AndroidJavaClass("java.util.Locale"))
 AndroidJavaObject locale = cls.CallStatic<AndroidJavaObject>("getDefault")
 ```
 
 使用 Set/SetStatic/Get/GetStatic 设置或获取字段。
 
-```
+```csharp
 AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
 ```
@@ -97,7 +97,7 @@ AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
 
 在 Java 中直接使用 UnitySendMessage 静态方法。
 
-```
+```java
 UnityPlayer.UnitySendMessage ("G", "M", "P");
 ```
 
@@ -113,7 +113,7 @@ UnityPlayer.UnitySendMessage ("G", "M", "P");
 
 如果我们需要改写或者扩展`UnityPlayerActivity`，需要创建一个子类`CustomUnityPlayerActivity`继承自`UnityPlayerActivity`，同时创建`AndroidManifest.xml`包含如下信息。
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.company.product">
   <application android:icon="@drawable/app_icon" android:label="@string/app_name">
@@ -191,7 +191,7 @@ Unity 会将所有插件目录的`AndroidManifest.xml`文件与 Unity 自身的`
 
 创建一个测试类`MyPluginBridge`，添加一个方法`SendToUnity`向 Unity 发信。
 
-```
+```java
 package myplugin;
 
 import com.unity3d.player.UnityPlayer;
@@ -205,7 +205,7 @@ public class MyPluginBridge {
 
 打开项目目录，进入`bin/classes`，删除无关项，将`MyPluginBridge.java`生成的`MyPluginBridge.class`打成 Jar 包。
 
-```
+```bash
 zqlt:~ lbs$ cd /Users/lbs/Documents/workspace/myplugin/bin/classes 
 zqlt:classes lbs$ jar -cvf myplugin.jar *
 已添加清单
@@ -219,7 +219,7 @@ zqlt:classes lbs$ jar -cvf myplugin.jar *
 
 在 Unity 中封装对 Android 的调用。
 
-```
+```csharp
 public void Call_SendToUnity()
 {
   using (AndroidJavaObject jo = new AndroidJavaObject ("myplugin.MyPluginBridge"))

@@ -27,7 +27,11 @@ tags: Unity
 
 ### Unity 与 iOS 交互的方式
 
-Unity 通过 C 与 iOS 进行交互。因为 Objective-C 可以与 C/C++ 进行混编，所以使用 C 代码封装对应的 Objective-C 代码即可。
+Unity 通过 C 与 iOS 进行交互。
+
+因为 Objective-C 可以与 C/C++ 进行混编，所以使用 C 代码封装对应的 Objective-C 代码即可。
+
+Unity 不能直接调用 C++ 的原因是 C++ 编译会有 Name mangling 问题。
 
 > 注意：建议 C 函数名加有特定意义的前缀，避免函数名冲突。
 
@@ -39,7 +43,7 @@ iOS 部分
 
 MyPluginBridge.h
 
-```
+```objc
 #import <Foundation/Foundation.h>
 
 @interface MyPluginBridge : NSObject
@@ -60,7 +64,7 @@ extern "C"
 
 MyPluginBridge.m
 
-```
+```objc
 #import "MyPluginBridge.h"
 
 @implementation MyPluginBridge
@@ -87,7 +91,7 @@ extern "C"
 
 Unity 部分
 
-```
+```csharp
 using System.Runtime.InteropServices;
 
 public static class MyPluginBridge
@@ -104,7 +108,7 @@ public static class MyPluginBridge
 
 #### iOS 向 Unity 发送通知
 
-```
+```c
 UnitySendMessage("G", "A", "B");
 ```
 
@@ -122,7 +126,7 @@ UnitySendMessage("G", "A", "B");
 
 #### 标记 PostProcessBuild 方法
 
-```
+```csharp
 [PostProcessBuild]
 public static void OnPostprocessBuild(BuildTarget buildTarget, string path)
 {
@@ -141,7 +145,7 @@ public static void OnPostprocessBuild(BuildTarget buildTarget, string path)
 
 #### 修改 PBXProject
 
-```
+```csharp
 private static void ModifyPBXProject(string path)
 {
     string projPath = PBXProject.GetPBXProjectPath(path);
@@ -158,7 +162,7 @@ private static void ModifyPBXProject(string path)
 
 修改 SEARCH_PATHS
 
-```
+```csharp
 proj.SetBuildProperty(target, "LIBRARY_SEARCH_PATHS", "$(inherited)");
 proj.AddBuildProperty(target, "LIBRARY_SEARCH_PATHS", "$(SRCROOT)");
 proj.AddBuildProperty(target, "LIBRARY_SEARCH_PATHS", "$(PROJECT_DIR)/Libraries");
@@ -168,20 +172,20 @@ proj.AddBuildProperty(target, "LIBRARY_SEARCH_PATHS", "$(PROJECT_DIR)/Libraries"
 
 bool 参数 true 表示框架是 optional，false 表示框架是 required。
 
-```
+```csharp
 //苹果内购
 proj.AddFrameworkToProject(target, "StoreKit.framework", false);
 ```
 
 添加 OTHER_LDFLAGS
 
-```
+```csharp
 proj.AddBuildProperty(target, "OTHER_LDFLAGS", "-ObjC");
 ```
 
 #### 修改 Plist
 
-```
+```csharp
 private static void ModifyPlist(string path)
 {
     //Info.plist
@@ -201,14 +205,14 @@ private static void ModifyPlist(string path)
 
 设置语言
 
-```
+```csharp
 //设置使用简体中文
 rootDict.SetString("CFBundleDevelopmentRegion", "zh_CN");
 ```
 
 iOS 10 设置使用权限说明
 
-```
+```csharp
 //摄像机权限
 rootDict.SetString("NSCameraUsageDescription", "AR");
 
@@ -221,7 +225,7 @@ rootDict.SetString("NSMicrophoneUsageDescription", "VoiceChat");
 
 添加第三方应用的 URL Scheme 到白名单
 
-```
+```csharp
 PlistElementArray LSApplicationQueriesSchemes = rootDict.CreateArray("LSApplicationQueriesSchemes");
 //微信
 LSApplicationQueriesSchemes.AddString("weixin");
@@ -229,7 +233,7 @@ LSApplicationQueriesSchemes.AddString("weixin");
 
 添加自己应用的 URL Scheme
 
-```
+```csharp
 PlistElementArray urlTypes = rootDict.CreateArray("CFBundleURLTypes");
 
 //网页唤起
