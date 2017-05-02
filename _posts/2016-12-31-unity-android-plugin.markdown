@@ -203,7 +203,7 @@ public class MyPluginBridge {
 }
 ```
 
-打开项目目录，进入`bin/classes`，删除无关项，将`MyPluginBridge.java`生成的`MyPluginBridge.class`打成 Jar 包。
+打开项目目录，进入`bin/classes`，删除无关项（包括`R.class`，`BuildConfig.class`等），将`MyPluginBridge.java`生成的`MyPluginBridge.class`打成 Jar 包。
 
 ```
 zqlt:~ lbs$ cd /Users/lbs/Documents/workspace/myplugin/bin/classes 
